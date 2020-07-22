@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class ReadFileA3 {
     public static void main(String[] args) {
+
+        int eggCounter=0;
         try {
             File file1 = new File("C:\\Users\\jimmy\\IdeaProjects\\Java.W4D3.Sander.Pichler\\src\\Christian\\Beginner\\readme.txt"); // Create file object
             Scanner scanner = new Scanner(file1); // Create new scanner object
@@ -20,12 +22,14 @@ public class ReadFileA3 {
                     if (formatOutput[i].contains(":")){
                         System.out.println("\n");
                     }if (formatOutput[i].contains("egg")){
+                        eggCounter++;
+
                         System.out.println("\n");
                     }
 
                 }
                  // Output lines read
-            }
+            }System.out.println("\nFile is containing "+ eggCounter+" eggs.");
             scanner.close(); // Close the scanner
         } catch (FileNotFoundException e) { // Catch the exception
             System.out.println("Error occurred");
